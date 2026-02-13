@@ -56,7 +56,7 @@ node ('master') {
    stage('Start Service') {
         bat """
         ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 ^
-        "sudo docker run -d -p 3000:3000 --name api-nodejs arifroid/qiscus:latest"
+        "sudo docker run -d --network host -p 3000:3000 --name api-nodejs arifroid/qiscus"
         """
     }
     */
