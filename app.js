@@ -11,7 +11,7 @@ const pool = new Pool({
   host: process.env.localhost,
   database: process.env.qiscus,
   password: process.env.qiscus123,
-  port: process.env.5432,
+  port: process.env."5432",
   max: 50,
   idleTimeoutMillis: 100,
   connectionTimeoutMillis: 100
