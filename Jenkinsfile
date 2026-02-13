@@ -19,7 +19,7 @@ def appName
 def appFullVersion
 def gitCommitId
 
-node ('nodejs') {
+node ('master') {
    stage ('Checkout'){
       git url: "${git_repo}", branch: "${git_branch}"
    }
