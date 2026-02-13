@@ -45,9 +45,9 @@ node ('master') {
     stage('Update image & restart service') {
     sshagent(['qiscus']) {
         bat """
-        ssh -o StrictHostKeyChecking=no ubuntu@3.234.193.168 ^
-          "sudo docker pull arifroid/qiscus:latest &&
-           sudo docker rm -f api-nodejs || true &&
+        ssh -o StrictHostKeyChecking=no ubuntu@3.234.193.168
+          "sudo docker pull arifroid/qiscus:latest 
+           sudo docker rm -f api-nodejs
            sudo docker run -d -p 3000:3000 --name api-nodejs arifroid/qiscus:latest"
         """
     }
