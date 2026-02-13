@@ -25,7 +25,6 @@ node ('master') {
    }
  
    stage ('Prepare'){
-      packageJson(host_db, port_db, name_db, user_db, pass_db)
       appName = sh( script: 'node -e "console.log(require(\'./package.json\').name);"', returnStdout: true).trim()
       appFullVersion = sh( script: 'node -e "console.log(require(\'./package.json\').version);"', returnStdout: true).trim()
       appFullVersion = appFullVersion.substring(0, appFullVersion.lastIndexOf('.')) + ".${BUILD_NUMBER}"
