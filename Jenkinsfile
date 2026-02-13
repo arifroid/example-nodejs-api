@@ -43,10 +43,7 @@ node ('master') {
     }
     
     stage('Update image & restart service') {
-        bat """
-        ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 ^
-        "sudo docker pull arifroid/qiscus:latest"
-        """
+        bat 'ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 "sudo docker pull arifroid/qiscus:latest"'
     }
    
    stage('Update') {
