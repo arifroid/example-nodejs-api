@@ -25,24 +25,24 @@ node ('master') {
    }
 
     stage ('Docker Build'){
-        sh """
+        bat """
         docker build  --rm -t https://hub.docker.com/repositories/arifroid/example-nodejs-api .
       """
     }
     stage ('Docker Push'){
-        sh """
+        bat """
         docker push https://hub.docker.com/repositories/arifroid/example-nodejs-api
       """
     }
 
     stage ('OpenShift Create App'){
-        sh """
+        bat """
         
       """
     }
     
     stage ('Update image'){
-        sh """
+        bat """
         
       """
     }
