@@ -31,7 +31,7 @@ node ('master') {
     }
     stage ('Docker Push'){
         bat """
-        docker push arifroid/qiscus
+        docker push arifroid/qiscus:latest
       """
     }
 
