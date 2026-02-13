@@ -26,12 +26,12 @@ node ('master') {
 
     stage ('Docker Build'){
         bat """
-        docker build  --rm -t example-nodejs-api .
+        docker build  --rm -t arifroid/qiscus .
       """
     }
     stage ('Docker Push'){
         bat """
-        docker push https://hub.docker.com/repositories/arifroid/example-nodejs-api:v1
+        docker push arifroid/qiscus
       """
     }
 
