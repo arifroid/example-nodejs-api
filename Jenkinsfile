@@ -46,11 +46,20 @@ node ('master') {
         bat """
         ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 ^
         "sudo docker pull arifroid/qiscus:latest"
+        """
+    }
+   
+   stage('Update') {
+        bat """
         ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 ^
         "sudo docker rm -f api-nodejs || true"
+        """
+    }
+
+   stage('Start Service') {
+        bat """
         ssh -i D:/Downloads/candidate.pem ubuntu@3.234.193.168 ^
         "sudo docker run -d -p 3000:3000 --name api-nodejs arifroid/qiscus:latest"
         """
     }
-
 }
