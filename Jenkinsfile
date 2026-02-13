@@ -26,12 +26,12 @@ node ('master') {
 
     stage ('Docker Build'){
         sh """
-        docker build  --rm -t https://hub.docker.com/repositories/arifroid/${appName}-v${appMajorVersion} .
+        docker build  --rm -t https://hub.docker.com/repositories/arifroid/example-nodejs-api .
       """
     }
     stage ('Docker Push'){
         sh """
-        docker push https://hub.docker.com/repositories/arifroid/${appName}-v${appMajorVersion}
+        docker push https://hub.docker.com/repositories/arifroid/example-nodejs-api
       """
     }
 
