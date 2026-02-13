@@ -23,15 +23,6 @@ node ('master') {
    stage ('Checkout'){
       git url: "${git_repo}", branch: "${git_branch}"
    }
- 
-   stage ('Prepare'){
-      appName = sh( script: 'node -e "console.log(require(\'./package.json\').name);"', returnStdout: true).trim()
-      appFullVersion = sh( script: 'node -e "console.log(require(\'./package.json\').version);"', returnStdout: true).trim()
-      appFullVersion = appFullVersion.substring(0, appFullVersion.lastIndexOf('.')) + ".${BUILD_NUMBER}"
-      gitCommitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-      appMajorVersion = appFullVersion.substring(0, appFullVersion.indexOf('.'))
-      //sh 'sed -i \'s/ENVIRONMENT = "local"/ENVIRONMENT = "dev"/g\' ./src/config.js'
-   }
 
     stage ('Docker Build'){
         sh """
