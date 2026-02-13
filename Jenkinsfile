@@ -43,7 +43,6 @@ node ('master') {
     }
     
     stage ('Update image & restart service'){
-        steps {
         sshagent(['qiscus']) {
             sh '''
             ssh -o StrictHostKeyChecking=no ubuntu@3.234.193.168 "
@@ -53,8 +52,6 @@ node ('master') {
             "
             '''
         }
-    }
-
     }
 
 }
