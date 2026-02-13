@@ -41,14 +41,8 @@ node ('master') {
       """
         }
     }
-
-    stage ('OpenShift Create App'){
-        bat """
-        
-      """
-    }
     
-    stage ('Update image'){
+    stage ('Update image & restart service'){
         bat """
         
       """
