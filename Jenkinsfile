@@ -51,6 +51,5 @@ node ('master') {
         EOF
         """
     }
-}
 
 }
