@@ -30,7 +30,13 @@ node ('master') {
       """
     }
     stage ('Docker Push'){
+        withCredentials([usernamePassword(
+            credentialsId: '50d75c2d-a56e-43f5-919a-551e987448e4',
+            usernameVariable: 'DOCKER_USER',
+            passwordVariable: 'DOCKER_PASS'
+        )]) {
         bat """
+        docker login -u %DOCKER_USER% -p %DOCKER_PASS%
         docker push arifroid/qiscus:latest
       """
     }
