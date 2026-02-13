@@ -14,7 +14,7 @@ const pool = new Pool({
   port: process.env.DB_PORT,
   max: 50,
   idleTimeoutMillis: 100,
-  connectionTimeoutMillis: 100
+  connectionTimeoutMillis: 10000
 });
 
 app.use((req, res, next) => {
