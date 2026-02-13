@@ -43,7 +43,7 @@ node ('master') {
     }
     
     stage('Update image & restart service') {
-    sshagent(['qiscus']) {
+    sshagent(['ubuntu']) {
         bat """
         ssh -o StrictHostKeyChecking=no ubuntu@3.234.193.168 << 'EOF'
         sudo docker pull arifroid/qiscus:latest
