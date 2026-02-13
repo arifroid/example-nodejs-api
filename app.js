@@ -7,11 +7,11 @@ const port = process.env.PORT || 3000;
 
 // PostgreSQL Connection Pool
 const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
+  user: process.env.qiscus,
+  host: process.env.127.0.0.1,
+  database: process.env.qiscus,
+  password: process.env.qiscus123,
+  port: process.env.5432,
   max: 50,
   idleTimeoutMillis: 100,
   connectionTimeoutMillis: 100
